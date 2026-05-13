@@ -3,7 +3,7 @@ import LocationFilter from "../components/LocationFilter";
 import { usePhotographers } from "../hooks/usePhotographers";
 
 export default function Home() {
-  const { photographers, allLocations, selectedLocation, setSelectedLocation } =
+  const { photographers, allLocations, selectedLocation, onChangeLocation } =
     usePhotographers();
 
   return (
@@ -24,7 +24,7 @@ export default function Home() {
         <LocationFilter
           locations={allLocations}
           selected={selectedLocation}
-          onSelect={setSelectedLocation}
+          onSelect={onChangeLocation}
         />
 
         {photographers.length === 0 ? (
